@@ -69,12 +69,12 @@ export default defineType({
     defineField({
       name: 'bonusUrl',
       title: 'Bonus URL',
-      type: 'url',
+      type: 'string',
     }),
     defineField({
       name: 'reviewUrl',
       title: 'Review URL',
-      type: 'url',
+      type: 'string',
     }),
   ],
   preview: {

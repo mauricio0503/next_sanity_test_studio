@@ -39,7 +39,7 @@ export default defineType({
             defineField({
               name: 'link',
               title: 'Link',
-              type: 'url',
+              type: 'string',
               description: 'Enter a URL or leave blank if it is a dropdown menu.',
               hidden: ({ parent }) => !!(parent?.dropdownItems && parent.dropdownItems.length > 0),
             }),
@@ -63,8 +63,7 @@ export default defineType({
                     defineField({
                       name: 'link',
                       title: 'Link',
-                      type: 'url',
-                      validation: Rule => Rule.required().uri({ allowRelative: true }),
+                      type: 'string',
                     }),
                   ],
                 },
@@ -80,7 +79,7 @@ export default defineType({
       type: 'object',
       fields: [
         { name: 'text', type: 'string', title: 'Button Text', validation: Rule => Rule.required() },
-        { name: 'link', type: 'url', title: 'Button Link', validation: Rule => Rule.required().uri({ allowRelative: true }) }
+        { name: 'link', type: 'string', title: 'Button Link', validation: Rule => Rule.uri({ allowRelative: true }) }
       ]
     }),
     defineField({
